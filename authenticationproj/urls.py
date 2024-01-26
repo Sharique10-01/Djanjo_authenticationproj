@@ -16,9 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-import views
+from authenticationproj import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('authenticationproj/',views.authenticationproj)
+    path('authenticationproj/',views.authenticationproj),
+    path('',views.home) # the default page isset to homepage now
 ]
