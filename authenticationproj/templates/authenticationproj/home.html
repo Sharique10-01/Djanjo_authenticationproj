@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<head>
-  <title>AutnLog</title>
-</head>
-<body>
+<html>
+  <head>
+    <title>AutnLog</title>
+  </head>
 
-  <h1>hows your day !!!!</h1>
-<!-- rendering the data from backed on the web page -->
+  <body>
 
-  {{movies}}
-
-</body>
+    <h1>hows your day !!!!</h1>
+  <!-- rendering the data from backed on the web page -->
+  {% for movie in movies %}
+  <ul>
+    <li><span ><a href="" style="text-decoration: none; color: cornflowerblue;">{{movie.title}}</a></span></li>
+  </ul>
+  {%endfor%}
+  </body>
+</html>
