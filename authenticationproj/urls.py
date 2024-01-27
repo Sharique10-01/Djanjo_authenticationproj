@@ -21,6 +21,7 @@ from authenticationproj import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('authenticationproj/',views.authenticationproj),
-    path('',views.home) # the default page isset to homepage now
+    path('authenticationproj/add',views.add),
+    path('authenticationproj/',views.authenticationproj), # the default page isset to homepage now
+    path('',views.home)
 ]
