@@ -11,6 +11,13 @@ def authenticationproj(request):
   data=Movie.objects.all() #  will generate a query to get all the data from the detabase 
   return render(request,'authenticationproj/home.html',{'movies':data})
 
+def details(request,id):
+  data=Movie.objects.get(pk=id) #  will generate a query to get all the data from the detabase 
+  return render(request,'authenticationproj/details.html',{'movies':data})
+
+def delete(request,id):
+    Movie.objects.get(pk=id).delete()
+    return HttpResponseRedirect('/authenticationproj')
 
 def add(request):
   #getting data from the browser ussing http post method
