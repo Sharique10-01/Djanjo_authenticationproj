@@ -24,6 +24,6 @@ urlpatterns = [
     path('authenticationproj/add',views.add),
     path('authenticationproj/<int:id>',views.details),
     path('authenticationproj/',views.authenticationproj), # the default page isset to homepage now 
-     path('authenticationproj/delete/<int:id>',views.delete),
+    path('authenticationproj/delete/<int:id>',views.delete),
     path('',views.home)
 ]

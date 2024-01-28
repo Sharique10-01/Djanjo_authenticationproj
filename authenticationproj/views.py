@@ -1,4 +1,4 @@
-from django.http import HttpResponse,HttpResponseRedirect
+from django.http import HttpResponse,HttpResponseRedirect,Http404
 from django.shortcuts import render
 from .models import Movie
 
@@ -16,7 +16,11 @@ def details(request,id):
   return render(request,'authenticationproj/details.html',{'movies':data})
 
 def delete(request,id):
-    Movie.objects.get(pk=id).delete()
+    try:
+     Movie.objects.get(pk=id) #if unknown id id provided through the url if its not in the database prompt not found
+    except:
+      raise Http404('Movie Does not Exist In our Server')
+    movie.delete() # else delete the requested movie from the server
     return HttpResponseRedirect('/authenticationproj')
 
 def add(request):
